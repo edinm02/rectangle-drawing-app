@@ -1,0 +1,26 @@
+<div *ngIf="loadingError">
+    <p>Error loading configuration.</p>
+  </div>
+  <br>
+  <div *ngIf="errorOnSavingDimensions" class="error-message">
+    Error saving dimensions.
+  </div>
+  <br>
+<svg 
+  [attr.width]="width" 
+  [attr.height]="height" 
+  (mousedown)="onMouseDown($event)"
+  (mousemove)="onMouseMove($event)"
+  (mouseup)="onMouseUp()"
+>
+  <rect 
+    x="0" 
+    y="0" 
+    [attr.width]="width" 
+    [attr.height]="height" 
+    fill="none" 
+    stroke="black"
+  ></rect>
+</svg>
+
+<div>Perimeter: {{ calculatePerimeter() }}</div>
