@@ -1,2 +1,0 @@
-# rectangle-drawing-app
-Frontend
